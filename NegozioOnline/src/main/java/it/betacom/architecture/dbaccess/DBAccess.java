@@ -1,4 +1,4 @@
-package com.gio.architecture.dbaccess;
+package it.betacom.architecture.dbaccess;
 
 import java.io.IOException;
 import java.io.InputStream;
@@ -7,7 +7,7 @@ import java.sql.DriverManager;
 import java.sql.SQLException;
 import java.util.Properties;
 
-import com.gio.architecture.dao.DAOException;
+import it.betacom.architecture.dao.DAOException;
 
 public class DBAccess {
 
