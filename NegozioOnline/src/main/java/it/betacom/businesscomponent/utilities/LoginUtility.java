@@ -1,4 +1,4 @@
-package com.gio.businesscomponent.utilities;
+package it.betacom.businesscomponent.utilities;
 
 import java.io.IOException;
 import java.sql.Connection;

@@ -1,4 +1,4 @@
-package com.gio.businesscomponent;
+package it.betacom.businesscomponent;
 
 import java.util.Enumeration;
 import java.util.Hashtable;
