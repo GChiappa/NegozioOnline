@@ -1,10 +1,10 @@
-package com.gio.architecture.dao.adapter;
+package it.betacom.architecture.dao.adapter;
 
 import java.sql.Connection;
 
-import com.gio.architecture.dao.DAOException;
-import com.gio.architecture.dao.GenericDAO;
-import com.gio.businesscomponent.model.Immagine;
+import it.betacom.architecture.dao.DAOException;
+import it.betacom.architecture.dao.GenericDAO;
+import it.betacom.businesscomponent.model.Immagine;
 
 public class AdaptImmagine implements GenericDAO<Immagine> {
 

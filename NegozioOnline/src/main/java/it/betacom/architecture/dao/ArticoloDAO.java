@@ -1,4 +1,4 @@
-package com.gio.architecture.dao;
+package it.betacom.architecture.dao;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
@@ -9,7 +9,7 @@ import java.sql.Statement;
 import javax.sql.rowset.CachedRowSet;
 import javax.sql.rowset.RowSetProvider;
 
-import com.gio.businesscomponent.model.Articolo;
+import it.betacom.businesscomponent.model.Articolo;
 
 public class ArticoloDAO implements DAOConstants, GenericDAO<Articolo> {
 

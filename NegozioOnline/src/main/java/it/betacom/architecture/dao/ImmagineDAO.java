@@ -1,12 +1,12 @@
-package com.gio.architecture.dao;
+package it.betacom.architecture.dao;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 
-import com.gio.architecture.dao.adapter.AdaptImmagine;
-import com.gio.businesscomponent.model.Immagine;
+import it.betacom.architecture.dao.adapter.AdaptImmagine;
+import it.betacom.businesscomponent.model.Immagine;
 
 public class ImmagineDAO extends AdaptImmagine implements DAOConstants {
 

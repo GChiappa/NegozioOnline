@@ -1,4 +1,4 @@
-package com.gio.architecture.dao;
+package it.betacom.architecture.dao;
 
 import java.sql.Connection;
 import java.sql.SQLException;
@@ -6,8 +6,8 @@ import java.sql.SQLException;
 import javax.sql.rowset.CachedRowSet;
 import javax.sql.rowset.RowSetProvider;
 
-import com.gio.architecture.dao.adapter.AdaptOrdine_Articolo;
-import com.gio.businesscomponent.model.Ordine_Articolo;
+import it.betacom.architecture.dao.adapter.AdaptOrdine_Articolo;
+import it.betacom.businesscomponent.model.Ordine_Articolo;
 
 public class Ordine_ArticoloDAO extends AdaptOrdine_Articolo implements DAOConstants {
 
