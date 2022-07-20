@@ -4,10 +4,10 @@ import java.io.IOException;
 import java.sql.Connection;
 import java.sql.SQLException;
 
-import com.gio.architecture.dao.DAOException;
-import com.gio.architecture.dao.UtenteDAO;
-import com.gio.architecture.dbaccess.DBAccess;
-import com.gio.businesscomponent.model.Utente;
+import it.betacom.architecture.dao.DAOException;
+import it.betacom.architecture.dao.UtenteDAO;
+import it.betacom.architecture.dbaccess.DBAccess;
+import it.betacom.businesscomponent.model.Utente;
 
 public class UtenteBC {
 

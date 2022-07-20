@@ -5,11 +5,11 @@ import java.sql.Connection;
 import java.sql.SQLException;
 import java.util.ArrayList;
 
-import com.gio.architecture.dao.ArticoloDAO;
-import com.gio.architecture.dao.DAOException;
-import com.gio.architecture.dbaccess.DBAccess;
-import com.gio.businesscomponent.idgenerator.ArticoloGenerator;
-import com.gio.businesscomponent.model.Articolo;
+import it.betacom.architecture.dao.ArticoloDAO;
+import it.betacom.architecture.dao.DAOException;
+import it.betacom.architecture.dbaccess.DBAccess;
+import it.betacom.businesscomponent.idgenerator.ArticoloGenerator;
+import it.betacom.businesscomponent.model.Articolo;
 
 public class ArticoloBC {
 

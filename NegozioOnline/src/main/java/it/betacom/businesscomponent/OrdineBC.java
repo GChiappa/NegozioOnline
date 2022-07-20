@@ -5,11 +5,11 @@ import java.sql.Connection;
 import java.sql.SQLException;
 import java.util.Date;
 
-import com.gio.architecture.dao.DAOException;
-import com.gio.architecture.dao.OrdineDAO;
-import com.gio.architecture.dbaccess.DBAccess;
-import com.gio.businesscomponent.idgenerator.OrdineGenerator;
-import com.gio.businesscomponent.model.Ordine;
+import it.betacom.architecture.dao.DAOException;
+import it.betacom.architecture.dao.OrdineDAO;
+import it.betacom.architecture.dbaccess.DBAccess;
+import it.betacom.businesscomponent.idgenerator.OrdineGenerator;
+import it.betacom.businesscomponent.model.Ordine;
 
 public class OrdineBC {
 

@@ -6,9 +6,9 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 
-import com.gio.architecture.dao.DAOConstants;
-import com.gio.architecture.dao.DAOException;
-import com.gio.architecture.dbaccess.DBAccess;
+import it.betacom.architecture.dao.DAOConstants;
+import it.betacom.architecture.dao.DAOException;
+import it.betacom.architecture.dbaccess.DBAccess;
 
 public class LoginUtility implements DAOConstants {
 

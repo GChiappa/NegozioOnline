@@ -8,9 +8,9 @@ import java.sql.SQLException;
 import java.sql.Statement;
 import java.util.Vector;
 
-import com.gio.architecture.dao.DAOConstants;
-import com.gio.architecture.dao.DAOException;
-import com.gio.architecture.dbaccess.DBAccess;
+import it.betacom.architecture.dao.DAOConstants;
+import it.betacom.architecture.dao.DAOException;
+import it.betacom.architecture.dbaccess.DBAccess;
 
 public class ReportUtility implements DAOConstants {
 
