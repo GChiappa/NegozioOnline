@@ -1,4 +1,4 @@
-package com.gio.businesscomponent.model;
+package  it.betacom.businesscomponent.model;
 
 public class Amministratore {
 	private String username;
