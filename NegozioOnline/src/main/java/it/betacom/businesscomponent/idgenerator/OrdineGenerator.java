@@ -1,4 +1,4 @@
-package com.gio.businesscomponent.idgenerator;
+package it.betacom.businesscomponent.idgenerator;
 
 import java.io.IOException;
 import java.sql.Connection;
@@ -6,9 +6,9 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
 
-import com.gio.architecture.dao.DAOConstants;
-import com.gio.architecture.dao.DAOException;
-import com.gio.architecture.dbaccess.DBAccess;
+import it.betacom.architecture.dao.DAOConstants;
+import it.betacom.architecture.dao.DAOException;
+import it.betacom.architecture.dbaccess.DBAccess;
 
 public class OrdineGenerator implements IdGeneratorInterface, DAOConstants {
 

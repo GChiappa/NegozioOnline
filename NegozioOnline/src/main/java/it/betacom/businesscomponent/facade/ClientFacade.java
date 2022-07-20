@@ -1,18 +1,18 @@
-package com.gio.businesscomponent.facade;
+package it.betacom.businesscomponent.facade;
 
 import java.io.IOException;
 
-import com.gio.architecture.dao.DAOException;
-import com.gio.businesscomponent.ArticoloBC;
-import com.gio.businesscomponent.ImmagineBC;
-import com.gio.businesscomponent.OrdineBC;
-import com.gio.businesscomponent.Ordine_ArticoloBC;
-import com.gio.businesscomponent.UtenteBC;
-import com.gio.businesscomponent.model.Articolo;
-import com.gio.businesscomponent.model.Immagine;
-import com.gio.businesscomponent.model.Ordine;
-import com.gio.businesscomponent.model.Ordine_Articolo;
-import com.gio.businesscomponent.model.Utente;
+import it.betacom.architecture.dao.DAOException;
+import it.betacom.businesscomponent.ArticoloBC;
+import it.betacom.businesscomponent.ImmagineBC;
+import it.betacom.businesscomponent.OrdineBC;
+import it.betacom.businesscomponent.Ordine_ArticoloBC;
+import it.betacom.businesscomponent.UtenteBC;
+import it.betacom.businesscomponent.model.Articolo;
+import it.betacom.businesscomponent.model.Immagine;
+import it.betacom.businesscomponent.model.Ordine;
+import it.betacom.businesscomponent.model.Ordine_Articolo;
+import it.betacom.businesscomponent.model.Utente;
 
 public class ClientFacade {
 
