@@ -1,4 +1,4 @@
-package com.gio.architecture.dao;
+package it.betacom.architecture.dao;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
@@ -8,9 +8,9 @@ import java.sql.SQLException;
 import javax.sql.rowset.CachedRowSet;
 import javax.sql.rowset.RowSetProvider;
 
-import com.gio.architecture.dao.adapter.AdaptUtente;
+import it.betacom.architecture.dao.adapter.AdaptUtente;
 //Concrete Component
-import com.gio.businesscomponent.model.Utente;
+import it.betacom.businesscomponent.model.Utente;
 
 public class UtenteDAO extends AdaptUtente implements DAOConstants {
 

@@ -1,10 +1,10 @@
-package com.gio.businesscomponent.facade;
+package it.betacom.businesscomponent.facade;
 
 import java.io.IOException;
 
-import com.gio.architecture.dao.DAOException;
-import com.gio.businesscomponent.ArticoloBC;
-import com.gio.businesscomponent.model.Articolo;
+import it.betacom.architecture.dao.DAOException;
+import it.betacom.businesscomponent.ArticoloBC;
+import it.betacom.businesscomponent.model.Articolo;
 
 public class AdminFacade {
 
