@@ -1,4 +1,4 @@
-package com.gio.architecture.dao;
+package it.betacom.architecture.dao;
 
 import java.sql.Connection;
 import java.sql.SQLException;
