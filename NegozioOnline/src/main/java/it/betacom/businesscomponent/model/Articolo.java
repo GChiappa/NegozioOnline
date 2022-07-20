@@ -1,4 +1,4 @@
-package com.gio.businesscomponent.model;
+package it.betacom.businesscomponent.model;
 
 public class Articolo {
 	private long id_articolo;

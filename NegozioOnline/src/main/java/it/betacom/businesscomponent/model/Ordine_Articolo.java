@@ -1,4 +1,4 @@
-package com.gio.businesscomponent.model;
+package it.betacom.businesscomponent.model;
 
 public class Ordine_Articolo {
 	private long id_ordine;
