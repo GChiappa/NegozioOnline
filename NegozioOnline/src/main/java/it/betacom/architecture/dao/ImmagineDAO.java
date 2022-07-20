@@ -6,7 +6,8 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 
 import it.betacom.architecture.dao.adapter.AdaptImmagine;
-import it.betacom.businesscomponent.model.Immagine;
+import it.betacom.businesscomponent.model.Immagine; 
+
 
 public class ImmagineDAO extends AdaptImmagine implements DAOConstants {
 
