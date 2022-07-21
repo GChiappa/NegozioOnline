@@ -1,47 +1,39 @@
 package it.betacom.architecture.dao;
 
 import java.sql.Connection;
+import java.sql.ResultSet;
 import java.sql.SQLException;
-
-import javax.sql.rowset.CachedRowSet;
-import javax.sql.rowset.RowSetProvider;
+import java.sql.Statement;
 
 import it.betacom.architecture.dao.adapter.AdaptOrdine_Articolo;
 import it.betacom.businesscomponent.model.Ordine_Articolo;
 
 public class Ordine_ArticoloDAO extends AdaptOrdine_Articolo implements DAOConstants {
 
-	private CachedRowSet rowSet;
+	private Statement stmt;
+	private ResultSet rs;
 
 	public static Ordine_ArticoloDAO getFactory() throws DAOException {
 		return new Ordine_ArticoloDAO();
 	}
 
-	private Ordine_ArticoloDAO() throws DAOException {
-		try {
-			rowSet = RowSetProvider.newFactory().createCachedRowSet();
-		} catch (SQLException sql) {
-			throw new DAOException(sql);
-		}
+	private Ordine_ArticoloDAO() {
 	}
 
 	@Override
 	public void create(Connection conn, Ordine_Articolo entity) throws DAOException {
 
 		try {
-			rowSet.setCommand(SELECT_ORDINE_ARTICOLO);
-			rowSet.execute(conn);
+			stmt = conn.createStatement(ResultSet.TYPE_SCROLL_INSENSITIVE, ResultSet.CONCUR_UPDATABLE);
+			rs = stmt.executeQuery(SELECT_ORDINE_ARTICOLO);
 
-			rowSet.moveToInsertRow();
+			rs.moveToInsertRow();
 
-			rowSet.updateLong(1, entity.getId_ordine());
-			rowSet.updateLong(2, entity.getId_articolo());
-			rowSet.updateInt(3, entity.getQuantita());
+			rs.updateLong(1, entity.getId_ordine());
+			rs.updateLong(2, entity.getId_articolo());
+			rs.updateInt(3, entity.getQuantita());
 
-			rowSet.insertRow();
-
-			rowSet.moveToCurrentRow();
-			rowSet.acceptChanges();
+			rs.insertRow();
 
 		} catch (SQLException sql) {
 			throw new DAOException(sql);

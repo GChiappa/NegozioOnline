@@ -18,7 +18,7 @@ public interface DAOConstants {
 	String DELETE_ORDINE = "delete from ORDINE where id_ordine = ?";
 	String UPDATE_ORDINE = "update ORDINE set totale = ?, data = ?, username = ? where id_ordine = ?";
 
-	String SELECT_ORDINE_ARTICOLO = "select * from ORDINE_ARTICOLO";
+	String SELECT_ORDINE_ARTICOLO = "select id_ordine, id_articolo, quantita from ORDINE_ARTICOLO";
 
 	String SELECT_IMMAGINE = "select * from IMMAGINE";
 	String SBYID_IMMAGINE = "select * from IMMAGINE where id_immagine = ?";
