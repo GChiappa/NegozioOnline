@@ -13,7 +13,7 @@ public interface DAOConstants {
 	String SBYID_ARTICOLO = "select * from ARTICOLO where id_articolo = ?";
 	String UPDATE_ARTICOLO = "update ARTICOLO set marca = ?, modello = ?, prezzo = ? where id_articolo = ?";
 
-	String SELECT_ORDINE = "select * from ORDINE";
+	String SELECT_ORDINE = "select id_ordine, totale, data, username from ORDINE";
 	String SBYID_ORDINE = "select * from ORDINE where id_ordine = ?";
 	String DELETE_ORDINE = "delete from ORDINE where id_ordine = ?";
 	String UPDATE_ORDINE = "update ORDINE set totale = ?, data = ?, username = ? where id_ordine = ?";

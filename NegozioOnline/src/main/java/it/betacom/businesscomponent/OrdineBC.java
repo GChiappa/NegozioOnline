@@ -21,15 +21,23 @@ public class OrdineBC {
 		conn = DBAccess.getConnection();
 	}
 
-	public void createOrUpdate(Ordine ordine) throws DAOException, ClassNotFoundException, IOException, NamingException {
+	public void create(Ordine ordine) throws DAOException, ClassNotFoundException, IOException, NamingException {
 
 		try {
-			if (ordine.getId_ordine() == 0) {
-				ordine.setId_ordine(OrdineGenerator.getInstance().getNextId());
-				ordine.setData(new Date());
-				OrdineDAO.getFactory().create(conn, ordine);
-			} else
-				OrdineDAO.getFactory().update(conn, ordine);
+			ordine.setId_ordine(OrdineGenerator.getInstance().getNextId());
+			ordine.setData(new Date());
+			System.out.println(ordine.toString());
+			OrdineDAO.getFactory().create(conn, ordine);
+
+		} catch (SQLException sql) {
+			throw new DAOException(sql);
+		}
+	}
+
+	public void update(Ordine ordine) throws DAOException, ClassNotFoundException, IOException, NamingException {
+
+		try {
+			OrdineDAO.getFactory().update(conn, ordine);
 		} catch (SQLException sql) {
 			throw new DAOException(sql);
 		}

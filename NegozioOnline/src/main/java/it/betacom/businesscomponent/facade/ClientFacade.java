@@ -42,13 +42,20 @@ public class ClientFacade {
 		uBC.create(utente);
 	}
 
-	public void createOrUpdateOrdine(Ordine ordine) throws ClassNotFoundException, IOException, NamingException, SQLException {
+	public void createOrdine(Ordine ordine) throws ClassNotFoundException, IOException, NamingException, SQLException {
 		oBC = new OrdineBC();
 		ordine.setId_ordine(0);
-		oBC.createOrUpdate(ordine);
+		oBC.create(ordine);
 	}
 
-	public void createOrdine_Articolo(Ordine_Articolo oa) throws ClassNotFoundException, IOException, NamingException, SQLException {
+	public void updateOrdine(Ordine ordine) throws ClassNotFoundException, IOException, NamingException, SQLException {
+		oBC = new OrdineBC();
+		ordine.setId_ordine(0);
+		oBC.update(ordine);
+	}
+
+	public void createOrdine_Articolo(Ordine_Articolo oa)
+			throws ClassNotFoundException, IOException, NamingException, SQLException {
 		oaBC = new Ordine_ArticoloBC();
 		oaBC.create(oa);
 	}
@@ -57,7 +64,7 @@ public class ClientFacade {
 		aBC = new ArticoloBC();
 		return aBC.getAll();
 	}
-	
+
 	public Immagine getImmagineById(long id) throws ClassNotFoundException, IOException, NamingException, SQLException {
 		iBC = new ImmagineBC();
 		return iBC.findById(id);

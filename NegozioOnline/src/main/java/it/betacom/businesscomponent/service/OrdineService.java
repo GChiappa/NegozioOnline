@@ -29,10 +29,9 @@ public class OrdineService {
 	@Consumes(MediaType.APPLICATION_JSON)
 	@Transactional
 	public Ordine create(Ordine ordine) throws ClassNotFoundException, IOException, NamingException, SQLException {
-		if (ordine.getId_ordine() == 0) {
-			OrdineBC oBC = new OrdineBC();
-			oBC.createOrUpdate(ordine);
-		}
+
+		OrdineBC oBC = new OrdineBC();
+		oBC.create(ordine);
 		return ordine;
 	}
 
@@ -61,7 +60,7 @@ public class OrdineService {
 	public Ordine update(Ordine ordine) throws ClassNotFoundException, IOException, NamingException, SQLException {
 		if (ordine.getId_ordine() != 0) {
 			OrdineBC oBC = new OrdineBC();
-			oBC.createOrUpdate(ordine);
+			oBC.update(ordine);
 		}
 		return ordine;
 	}
