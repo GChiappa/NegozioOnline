@@ -11,7 +11,7 @@ insert into immagine values(3, 'img/GalaxyFold.jpg', 'Galaxy Fold');
 insert into immagine values(4, 'img/LavastoviglieXTR.jpg', 'Lavastoviglie XTR');
 insert into immagine values(5, 'img/LaptopHP.jpg', 'Laptop HP');
 
-insert into amministratore values('admin','e4k^Rd%fgT9t*t2TA£S5y!s58u_dak^Rd%fgT9t*t2TA£S5y!s58u_d3k^Rd%fgT9t*t2TA£S5y!s58u_29k^Rd%fgT9t*t2TA£S5y!s58u_bk^Rd%fgT9t*t2TA£S5y!s58u_dek^Rd%fgT9t*t2TA£S5y!s58u_f2k^Rd%fgT9t*t2TA£S5y!s58u_bbk^Rd%fgT9t*t2TA£S5y!s58u_e2k^Rd%fgT9t*t2TA£S5y!s58u_1ek^Rd%fgT9t*t2TA£S5y!s58u_20k^Rd%fgT9t*t2TA£S5y!s58u_adk^Rd%fgT9t*t2TA£S5y!s58u_49k^Rd%fgT9t*t2TA£S5y!s58u_48k^Rd%fgT9t*t2TA£S5y!s58u_dek^Rd%fgT9t*t2TA£S5y!s58u_90k^Rd%fgT9t*t2TA£S5y!s58u_','giovanni@admin.it');
+insert into amministratore values('admin','e4k^Rd%fgT9t*t2TAï¿½S5y!s58u_dak^Rd%fgT9t*t2TAï¿½S5y!s58u_d3k^Rd%fgT9t*t2TAï¿½S5y!s58u_29k^Rd%fgT9t*t2TAï¿½S5y!s58u_bk^Rd%fgT9t*t2TAï¿½S5y!s58u_dek^Rd%fgT9t*t2TAï¿½S5y!s58u_f2k^Rd%fgT9t*t2TAï¿½S5y!s58u_bbk^Rd%fgT9t*t2TAï¿½S5y!s58u_e2k^Rd%fgT9t*t2TAï¿½S5y!s58u_1ek^Rd%fgT9t*t2TAï¿½S5y!s58u_20k^Rd%fgT9t*t2TAï¿½S5y!s58u_adk^Rd%fgT9t*t2TAï¿½S5y!s58u_49k^Rd%fgT9t*t2TAï¿½S5y!s58u_48k^Rd%fgT9t*t2TAï¿½S5y!s58u_dek^Rd%fgT9t*t2TAï¿½S5y!s58u_90k^Rd%fgT9t*t2TAï¿½S5y!s58u_','giovanni@admin.it');
 
 commit
 
