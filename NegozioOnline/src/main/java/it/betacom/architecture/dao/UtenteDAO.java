@@ -4,9 +4,10 @@ import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.sql.Statement;
 
-import javax.sql.rowset.CachedRowSet;
-import javax.sql.rowset.RowSetProvider;
+
+
 
 import it.betacom.architecture.dao.adapter.AdaptUtente;
 //Concrete Component
@@ -14,42 +15,35 @@ import it.betacom.businesscomponent.model.Utente;
 
 public class UtenteDAO extends AdaptUtente implements DAOConstants {
 
-	private CachedRowSet rowSet;
+	private Statement stmt;
+	private ResultSet rs;
+
 
 	public static UtenteDAO getFactory() throws DAOException {
 		return new UtenteDAO();
 	}
 
-	private UtenteDAO() throws DAOException {
-		try {
-			rowSet = RowSetProvider.newFactory().createCachedRowSet();
-		} catch (SQLException sql) {
-			throw new DAOException(sql);
-		}
+	private UtenteDAO() {
+	
 	}
 
 	@Override
 	public void create(Connection conn, Utente entity) throws DAOException {
 
 		try {
-			rowSet.setCommand(SELECT_UTENTE);
-			rowSet.execute(conn);
+			stmt = conn.createStatement(ResultSet.TYPE_SCROLL_INSENSITIVE, ResultSet.CONCUR_UPDATABLE);
+			rs = stmt.executeQuery(SELECT_UTENTE);
+			rs.updateString(1, entity.getNome());
+			rs.updateString(2, entity.getCognome());
+			rs.updateString(3, entity.getIndirizzo());
+			rs.updateString(4, entity.getCap());
+			rs.updateDate(5, new java.sql.Date(entity.getNascita().getTime()));
+			rs.updateString(6, entity.getUsername());
+			rs.updateString(7, entity.getPassword());
+			rs.updateString(8, entity.getEmail());
 
-			rowSet.moveToInsertRow();
+			rs.insertRow();
 
-			rowSet.updateString(1, entity.getNome());
-			rowSet.updateString(2, entity.getCognome());
-			rowSet.updateString(3, entity.getIndirizzo());
-			rowSet.updateString(4, entity.getCap());
-			rowSet.updateDate(5, new java.sql.Date(entity.getNascita().getTime()));
-			rowSet.updateString(6, entity.getUsername());
-			rowSet.updateString(7, entity.getPassword());
-			rowSet.updateString(8, entity.getEmail());
-
-			rowSet.insertRow();
-
-			rowSet.moveToCurrentRow();
-			rowSet.acceptChanges();
 
 		} catch (SQLException sql) {
 			throw new DAOException(sql);
@@ -92,7 +86,7 @@ public class UtenteDAO extends AdaptUtente implements DAOConstants {
 			ps = conn.prepareStatement(SBYUSERNAME_UTENTE);
 			ps.setString(1, username);
 
-			ResultSet rs = ps.executeQuery();
+			rs = ps.executeQuery();
 
 			if (rs.next()) {
 				utente = new Utente();
