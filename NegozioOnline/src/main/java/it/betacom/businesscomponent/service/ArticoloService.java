@@ -72,7 +72,7 @@ public class ArticoloService {
 		return aBC.findById(id);
 	}
 
-	// public Articolo[] searchByName
+	
 	@GET
 	@Path("/articoli")
 	@Produces(MediaType.APPLICATION_JSON)
@@ -80,8 +80,19 @@ public class ArticoloService {
 		ArticoloBC aBC = new ArticoloBC();
 		return Arrays.asList(aBC.getAll());
 	}
+	
+	
 	//TODO
-	//public Articolo[] getAll()
+	//public Articolo[] searchByName
+	
+	@GET
+	@Path("/articolo/{name}")
+	@Produces(MediaType.APPLICATION_JSON)
+	public Articolo[] getArticoloName(@PathParam("name") String name)
+			throws ClassNotFoundException, IOException, NamingException, SQLException {
+		ArticoloBC aBC = new ArticoloBC();
+		return aBC.searchByName(name);
+	}
 	
 	
 	
