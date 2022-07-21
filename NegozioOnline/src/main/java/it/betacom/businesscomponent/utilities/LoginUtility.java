@@ -6,6 +6,8 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 
+import javax.naming.NamingException;
+
 import it.betacom.architecture.dao.DAOConstants;
 import it.betacom.architecture.dao.DAOException;
 import it.betacom.architecture.dbaccess.DBAccess;
@@ -15,7 +17,7 @@ public class LoginUtility implements DAOConstants {
 	// non serve implementare un dao perche non si ha un modello
 	private Connection conn;
 
-	public LoginUtility() throws ClassNotFoundException, DAOException, IOException {
+	public LoginUtility() throws ClassNotFoundException, IOException, NamingException, SQLException {
 		conn = DBAccess.getConnection();
 	}
 

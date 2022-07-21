@@ -4,6 +4,8 @@ import java.io.IOException;
 import java.sql.Connection;
 import java.sql.SQLException;
 
+import javax.naming.NamingException;
+
 import it.betacom.architecture.dao.DAOException;
 import it.betacom.architecture.dao.Ordine_ArticoloDAO;
 import it.betacom.architecture.dbaccess.DBAccess;
@@ -13,7 +15,7 @@ public class Ordine_ArticoloBC {
 
 	private Connection conn;
 
-	public Ordine_ArticoloBC() throws ClassNotFoundException, DAOException, IOException {
+	public Ordine_ArticoloBC() throws ClassNotFoundException, IOException, NamingException, SQLException {
 		conn = DBAccess.getConnection();
 	}
 

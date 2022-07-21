@@ -4,6 +4,8 @@ import java.io.IOException;
 import java.sql.Connection;
 import java.sql.SQLException;
 
+import javax.naming.NamingException;
+
 import it.betacom.architecture.dao.DAOException;
 import it.betacom.architecture.dao.UtenteDAO;
 import it.betacom.architecture.dbaccess.DBAccess;
@@ -13,7 +15,7 @@ public class UtenteBC {
 
 	private Connection conn;
 
-	public UtenteBC() throws ClassNotFoundException, DAOException, IOException {
+	public UtenteBC() throws ClassNotFoundException, IOException, NamingException, SQLException {
 		conn = DBAccess.getConnection();
 	}
 

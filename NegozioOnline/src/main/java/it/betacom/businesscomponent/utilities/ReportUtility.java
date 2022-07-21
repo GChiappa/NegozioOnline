@@ -8,6 +8,8 @@ import java.sql.SQLException;
 import java.sql.Statement;
 import java.util.Vector;
 
+import javax.naming.NamingException;
+
 import it.betacom.architecture.dao.DAOConstants;
 import it.betacom.architecture.dao.DAOException;
 import it.betacom.architecture.dbaccess.DBAccess;
@@ -16,7 +18,7 @@ public class ReportUtility implements DAOConstants {
 
 	private Connection conn;
 
-	public ReportUtility() throws ClassNotFoundException, DAOException, IOException {
+	public ReportUtility() throws ClassNotFoundException, IOException, NamingException, SQLException {
 		conn = DBAccess.getConnection();
 	}
 

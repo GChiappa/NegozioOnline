@@ -6,6 +6,8 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
 
+import javax.naming.NamingException;
+
 import it.betacom.architecture.dao.DAOConstants;
 import it.betacom.architecture.dao.DAOException;
 import it.betacom.architecture.dbaccess.DBAccess;
@@ -15,11 +17,11 @@ public class ArticoloGenerator implements IdGeneratorInterface, DAOConstants {
 	private static ArticoloGenerator idGen;
 	private Connection conn;
 
-	private ArticoloGenerator() throws ClassNotFoundException, DAOException, IOException {
+	private ArticoloGenerator() throws ClassNotFoundException, IOException, NamingException, SQLException {
 		conn = DBAccess.getConnection();
 	}
 
-	public static ArticoloGenerator getInstance() throws ClassNotFoundException, DAOException, IOException {
+	public static ArticoloGenerator getInstance() throws ClassNotFoundException, IOException, NamingException, SQLException {
 		if (idGen == null)
 			idGen = new ArticoloGenerator();
 		return idGen;

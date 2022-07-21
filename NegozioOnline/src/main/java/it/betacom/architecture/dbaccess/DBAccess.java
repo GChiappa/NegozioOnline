@@ -1,45 +1,25 @@
 package it.betacom.architecture.dbaccess;
 
-import java.io.IOException;
-import java.io.InputStream;
 import java.sql.Connection;
-import java.sql.DriverManager;
 import java.sql.SQLException;
-import java.util.Properties;
 
-import it.betacom.architecture.dao.DAOException;
+import javax.naming.InitialContext;
+import javax.naming.NamingException;
+import javax.sql.DataSource;
 
 public class DBAccess {
-
 	private static Connection conn;
+	private static DataSource dataSource;
 
-	public static synchronized Connection getConnection() throws ClassNotFoundException, DAOException, IOException {
-		try {
-			ClassLoader cLoader = Thread.currentThread().getContextClassLoader();
-			InputStream input = cLoader.getResourceAsStream("properties/config.properties");
-			Properties p = new Properties();
-			p.load(input);
-
-			Class.forName(p.getProperty("jdbcDriver"));
-
-			conn = DriverManager.getConnection(p.getProperty("jdbcUrl"), p.getProperty("jdbcUsername"),
-					p.getProperty("jdbcPassword"));
-			conn.setAutoCommit(false);
-
-			return conn;
-		} catch (SQLException sql) {
-			throw new DAOException(sql);
-		}
-
+	public static synchronized Connection getConnection() throws NamingException, SQLException {
+		InitialContext contesto = new InitialContext();
+		dataSource = (DataSource) contesto.lookup("java:/OracleDS");
+		conn = dataSource.getConnection();
+		return conn;
 	}
 
-	public static void closeConnection() throws DAOException {
-		try {
-			if (conn != null)
-				conn.close();
-		} catch (SQLException sql) {
-			throw new DAOException(sql);
-		}
+	public static void closeConnection() throws SQLException {
+		if (conn != null)
+			conn.close();
 	}
-
 }

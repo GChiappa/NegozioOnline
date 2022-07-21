@@ -6,6 +6,8 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
 
+import javax.naming.NamingException;
+
 import it.betacom.architecture.dao.DAOConstants;
 import it.betacom.architecture.dao.DAOException;
 import it.betacom.architecture.dbaccess.DBAccess;
@@ -15,11 +17,11 @@ public class OrdineGenerator implements IdGeneratorInterface, DAOConstants {
 	private static OrdineGenerator idGen;
 	private Connection conn;
 
-	private OrdineGenerator() throws ClassNotFoundException, DAOException, IOException {
+	private OrdineGenerator() throws ClassNotFoundException, IOException, NamingException, SQLException {
 		conn = DBAccess.getConnection();
 	}
 
-	public static OrdineGenerator getInstance() throws ClassNotFoundException, DAOException, IOException {
+	public static OrdineGenerator getInstance() throws ClassNotFoundException, IOException, NamingException, SQLException {
 		if (idGen == null)
 			idGen = new OrdineGenerator();
 		return idGen;
