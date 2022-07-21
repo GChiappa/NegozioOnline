@@ -1,8 +1,10 @@
 package it.betacom.businesscomponent.facade;
 
 import java.io.IOException;
+import java.sql.SQLException;
 
-import it.betacom.architecture.dao.DAOException;
+import javax.naming.NamingException;
+
 import it.betacom.businesscomponent.ArticoloBC;
 import it.betacom.businesscomponent.ImmagineBC;
 import it.betacom.businesscomponent.OrdineBC;
@@ -35,33 +37,33 @@ public class ClientFacade {
 		return cF;
 	}
 
-	public void createUtente(Utente utente) throws ClassNotFoundException, DAOException, IOException {
+	public void createUtente(Utente utente) throws ClassNotFoundException, IOException, NamingException, SQLException {
 		uBC = new UtenteBC();
 		uBC.create(utente);
 	}
 
-	public void createOrUpdateOrdine(Ordine ordine) throws ClassNotFoundException, DAOException, IOException {
+	public void createOrUpdateOrdine(Ordine ordine) throws ClassNotFoundException, IOException, NamingException, SQLException {
 		oBC = new OrdineBC();
 		ordine.setId_ordine(0);
 		oBC.createOrUpdate(ordine);
 	}
 
-	public void createOrdine_Articolo(Ordine_Articolo oa) throws ClassNotFoundException, DAOException, IOException {
+	public void createOrdine_Articolo(Ordine_Articolo oa) throws ClassNotFoundException, IOException, NamingException, SQLException {
 		oaBC = new Ordine_ArticoloBC();
 		oaBC.create(oa);
 	}
 
-	public Articolo[] getArticoli() throws ClassNotFoundException, DAOException, IOException {
+	public Articolo[] getArticoli() throws ClassNotFoundException, IOException, NamingException, SQLException {
 		aBC = new ArticoloBC();
 		return aBC.getAll();
 	}
 	
-	public Immagine getImmagineById(long id) throws ClassNotFoundException, DAOException, IOException {
+	public Immagine getImmagineById(long id) throws ClassNotFoundException, IOException, NamingException, SQLException {
 		iBC = new ImmagineBC();
 		return iBC.findById(id);
 	}
 
-	public Articolo getArticoloById(long id) throws ClassNotFoundException, DAOException, IOException {
+	public Articolo getArticoloById(long id) throws ClassNotFoundException, IOException, NamingException, SQLException {
 		aBC = new ArticoloBC();
 		return aBC.findById(id);
 	}

@@ -5,6 +5,8 @@ import java.sql.Connection;
 import java.sql.SQLException;
 import java.util.Date;
 
+import javax.naming.NamingException;
+
 import it.betacom.architecture.dao.DAOException;
 import it.betacom.architecture.dao.OrdineDAO;
 import it.betacom.architecture.dbaccess.DBAccess;
@@ -15,11 +17,11 @@ public class OrdineBC {
 
 	private Connection conn;
 
-	public OrdineBC() throws ClassNotFoundException, DAOException, IOException {
+	public OrdineBC() throws ClassNotFoundException, IOException, NamingException, SQLException {
 		conn = DBAccess.getConnection();
 	}
 
-	public void createOrUpdate(Ordine ordine) throws DAOException, ClassNotFoundException, IOException {
+	public void createOrUpdate(Ordine ordine) throws DAOException, ClassNotFoundException, IOException, NamingException {
 
 		try {
 			if (ordine.getId_ordine() == 0) {
@@ -40,7 +42,7 @@ public class OrdineBC {
 			throw new DAOException(sql);
 		}
 	}
-	
+
 	public Ordine findById(long id) throws DAOException {
 		try {
 			return OrdineDAO.getFactory().findById(conn, id);

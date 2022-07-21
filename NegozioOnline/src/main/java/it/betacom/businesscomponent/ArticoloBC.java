@@ -5,6 +5,8 @@ import java.sql.Connection;
 import java.sql.SQLException;
 import java.util.ArrayList;
 
+import javax.naming.NamingException;
+
 import it.betacom.architecture.dao.ArticoloDAO;
 import it.betacom.architecture.dao.DAOException;
 import it.betacom.architecture.dbaccess.DBAccess;
@@ -15,11 +17,11 @@ public class ArticoloBC {
 
 	private Connection conn;
 
-	public ArticoloBC() throws ClassNotFoundException, DAOException, IOException {
+	public ArticoloBC() throws ClassNotFoundException, IOException, NamingException, SQLException {
 		conn = DBAccess.getConnection();
 	}
 
-	public void createOrUpdate(Articolo articolo) throws DAOException, ClassNotFoundException, IOException {
+	public void createOrUpdate(Articolo articolo) throws DAOException, ClassNotFoundException, IOException, NamingException {
 		try {
 			if (articolo.getId_articolo() == 0) {
 				articolo.setId_articolo(ArticoloGenerator.getInstance().getNextId());

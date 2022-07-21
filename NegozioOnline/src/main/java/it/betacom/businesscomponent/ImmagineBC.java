@@ -4,6 +4,8 @@ import java.io.IOException;
 import java.sql.Connection;
 import java.sql.SQLException;
 
+import javax.naming.NamingException;
+
 import it.betacom.architecture.dao.DAOException;
 import it.betacom.architecture.dao.ImmagineDAO;
 import it.betacom.architecture.dbaccess.DBAccess;
@@ -13,7 +15,7 @@ public class ImmagineBC {
 
 	private Connection conn;
 
-	public ImmagineBC() throws ClassNotFoundException, DAOException, IOException {
+	public ImmagineBC() throws ClassNotFoundException, IOException, NamingException, SQLException {
 		conn = DBAccess.getConnection();
 	}
 
