@@ -19,7 +19,7 @@ import javax.ws.rs.core.MediaType;
 import it.betacom.businesscomponent.OrdineBC;
 import it.betacom.businesscomponent.model.Ordine;
 
-@Path("/ordine/service")
+@Path("/ordineservice")
 public class OrdineService {
 
 	@POST
