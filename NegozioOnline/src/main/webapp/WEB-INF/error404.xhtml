@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="ISO-8859-1" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+    xmlns:h="http://java.sun.com/jsf/html"
+    xmlns:f="http://java.sun.com/jsf/core"
+    xmlns:p="http://primefaces.org/ui">
+<h:head>
+<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
+<title>Error404</title>
+<h:outputStylesheet name="css/style.css"/>
+</h:head>
+<body>
+<div class="container">
+
+<p:card style="margin-top: 20px; margin-bottom:20px;">
+		 <f:facet name="title">
+		 	Richiesta non valida
+		 </f:facet>
+		 <f:facet name="subtitle">
+		 	Pagina non trovata
+		 </f:facet>
+		 
+		 <h4>Impossibile accedere alla pagina richiesta</h4>
+		 
+		 <p>
+		 	<h:link outcome="index" value="Torna alla pagina di index"></h:link>
+		 </p>
+</p:card>	 
+</div>
+</body>
+</html>
