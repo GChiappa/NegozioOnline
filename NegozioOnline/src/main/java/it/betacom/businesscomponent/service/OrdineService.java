@@ -8,6 +8,7 @@ import java.util.List;
 import javax.naming.NamingException;
 import javax.transaction.Transactional;
 import javax.ws.rs.Consumes;
+import javax.ws.rs.DELETE;
 import javax.ws.rs.GET;
 import javax.ws.rs.POST;
 import javax.ws.rs.PUT;
@@ -44,7 +45,7 @@ public class OrdineService {
 	}
 
 	@GET
-	@Path("/cliente/{id}")
+	@Path("/ordine/{id}")
 	@Produces(MediaType.APPLICATION_JSON)
 	public Ordine getOrdine(@PathParam("id") long id)
 			throws ClassNotFoundException, IOException, NamingException, SQLException {
@@ -65,7 +66,7 @@ public class OrdineService {
 		return ordine;
 	}
 
-	@GET
+	@DELETE
 	@Path("/delete/{id}")
 	@Produces(MediaType.APPLICATION_JSON)
 	public void delete(@PathParam("id") long id)
