@@ -27,11 +27,12 @@ public class UtenteService {
 	@Produces(MediaType.APPLICATION_JSON)
 	@Consumes(MediaType.APPLICATION_JSON)
 	@Transactional
-	public void createUtente(Utente utente) 
+	public Utente createUtente(Utente utente) 
 			throws NamingException, SQLException, ParseException, ClassNotFoundException, IOException {
 		UtenteBC uBC = new UtenteBC();
 		uBC.create(utente);
 		
+		return utente;
 	
 	}
 	
