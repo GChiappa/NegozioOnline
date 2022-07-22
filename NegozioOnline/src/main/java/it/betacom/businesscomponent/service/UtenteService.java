@@ -42,14 +42,15 @@ public class UtenteService {
 	@Consumes(MediaType.APPLICATION_JSON)
 	@Transactional
 	public void update(Utente utente) 
-			throws NamingException, SQLException, ParseException, ClassNotFoundException, IOException {
+		throws NamingException, SQLException, ParseException, ClassNotFoundException, IOException {
+
 		UtenteBC uBC = new UtenteBC();
 		uBC.update(utente);
 	}
 	
 	@GET
 	@Path("/findbyusername/{username}")
-	@Consumes(MediaType.APPLICATION_JSON)
+	@Produces(MediaType.APPLICATION_JSON)
 	@Transactional
 	public Utente findByUsername(@PathParam("username") String username) throws ClassNotFoundException, IOException, NamingException, SQLException{
 		UtenteBC uBC = new UtenteBC();
