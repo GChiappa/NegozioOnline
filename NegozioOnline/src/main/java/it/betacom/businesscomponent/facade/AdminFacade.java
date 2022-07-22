@@ -5,7 +5,6 @@ import java.sql.SQLException;
 
 import javax.naming.NamingException;
 
-import it.betacom.architecture.dao.DAOException;
 import it.betacom.businesscomponent.ArticoloBC;
 import it.betacom.businesscomponent.model.Articolo;
 
