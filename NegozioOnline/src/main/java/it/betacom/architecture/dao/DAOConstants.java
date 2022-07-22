@@ -3,12 +3,12 @@ package it.betacom.architecture.dao;
 public interface DAOConstants {
 
 	// Client ----------
-	String SELECT_UTENTE = "select * from UTENTE";
+	String SELECT_UTENTE = "select nome, cognome, indirizzo, cap, nascita, username, password, email from UTENTE";
 	String SBYUSERNAME_UTENTE = "select * from UTENTE where username = ?";
 	String SELECT_PASSWORD_UTENTE = "select password from UTENTE where username = ?";
 	String UPDATE_UTENTE = "update UTENTE set nome = ?, cognome = ?, indirizzo = ?, cap = ?, nascita = ?, password = ?, email = ? where username = ?";
 
-	String SELECT_ARTICOLO = "select * from ARTICOLO";
+	String SELECT_ARTICOLO = "select id_articolo, marca, modello, prezzo from ARTICOLO";
 	String DELETE_ARTICOLO = "delete from ARTICOLO where id_articolo = ?";
 	String SBYID_ARTICOLO = "select * from ARTICOLO where id_articolo = ?";
 	String UPDATE_ARTICOLO = "update ARTICOLO set marca = ?, modello = ?, prezzo = ? where id_articolo = ?";

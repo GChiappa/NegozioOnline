@@ -17,11 +17,8 @@ import javax.ws.rs.PathParam;
 import javax.ws.rs.Produces;
 import javax.ws.rs.core.MediaType;
 
-import it.betacom.architecture.dao.DAOException;
 import it.betacom.businesscomponent.ArticoloBC;
-import it.betacom.businesscomponent.OrdineBC;
 import it.betacom.businesscomponent.model.Articolo;
-import it.betacom.businesscomponent.model.Ordine;
 
 @Path("/articoloservice")
 public class ArticoloService {
@@ -72,7 +69,6 @@ public class ArticoloService {
 		return aBC.findById(id);
 	}
 
-	
 	@GET
 	@Path("/articoli")
 	@Produces(MediaType.APPLICATION_JSON)
@@ -80,20 +76,14 @@ public class ArticoloService {
 		ArticoloBC aBC = new ArticoloBC();
 		return Arrays.asList(aBC.getAll());
 	}
-	
-	
-	//TODO
-	//public Articolo[] searchByName
-	
+
 	@GET
-	@Path("/articolo/{name}")
+	@Path("/articolobynome/{name}")
 	@Produces(MediaType.APPLICATION_JSON)
-	public Articolo[] getArticoloName(@PathParam("name") String name)
+	public List<Articolo> getArticoloName(@PathParam("name") String name)
 			throws ClassNotFoundException, IOException, NamingException, SQLException {
 		ArticoloBC aBC = new ArticoloBC();
-		return aBC.searchByName(name);
+		return Arrays.asList(aBC.searchByName(name));
 	}
-	
-	
-	
+
 }
