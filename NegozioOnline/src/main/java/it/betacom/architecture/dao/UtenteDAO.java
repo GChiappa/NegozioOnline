@@ -33,6 +33,7 @@ public class UtenteDAO extends AdaptUtente implements DAOConstants {
 		try {
 			stmt = conn.createStatement(ResultSet.TYPE_SCROLL_INSENSITIVE, ResultSet.CONCUR_UPDATABLE);
 			rs = stmt.executeQuery(SELECT_UTENTE);
+			rs.moveToInsertRow();
 			rs.updateString(1, entity.getNome());
 			rs.updateString(2, entity.getCognome());
 			rs.updateString(3, entity.getIndirizzo());
@@ -68,7 +69,7 @@ public class UtenteDAO extends AdaptUtente implements DAOConstants {
 			ps.setString(8, entity.getUsername());
 			ps.execute();
 
-			conn.commit();
+		
 
 		} catch (SQLException sql) {
 			throw new DAOException(sql);
